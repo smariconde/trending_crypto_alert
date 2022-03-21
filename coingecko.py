@@ -22,8 +22,12 @@ def trending():
     return symbols
 
 def data(id):
-    url = main_url + '/coins/'+ id + 'tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false'
-    
+    url = main_url + '/coins/'+ id + '?tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false'
+    r = requests.get(url)
+    js = r.json()
+    print(url)
+    return js
 
 
-print(trending())
+#print(trending())
+#print(data('fantom'))
