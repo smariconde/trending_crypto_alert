@@ -21,21 +21,24 @@ def trending():
     return symbols
 
 def data(coin_id):
-    js = cg.get_coin_by_id(coin_id)
+    js = cg.get_coin_by_id(coin_id, sparkline=True)
+
     try:
         category = js["categories"]
         sentiment = js["sentiment_votes_up_percentage"]
         price = js["market_data"]["current_price"]['usd']
-        price_1h = js["market_data"]["price_change_percentage_1h_in_currency"]['usd']
-        price_24hs = js["market_data"]["price_change_percentage_24h"]
+        price_1h = round(js["market_data"]["price_change_percentage_1h_in_currency"]['usd'], 2)
+        price_24hs = round(js["market_data"]["price_change_percentage_24h"], 2)
+        chart = js["market_data"]["sparkline_7d"]["price"]
     except:
         category = '-'
         sentiment = '-'
         price = '-'
         price_1h = '-'
         price_24hs = '-'
+        chart = '-'
     
-    return category, sentiment, price, price_1h, price_24hs
+    return category, sentiment, price, price_1h, price_24hs, chart
 
 
 #print(trending())

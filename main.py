@@ -21,8 +21,14 @@ if __name__ == '__main__':
                 for new_coin in new_coins:
                     try:
                         datos = coingecko.data(new_coin[0])
-                        tools.send_message(f'{new_coin[1]}\nTipo: {datos[0][0]}\nSentiment: {datos[1]}%\nPrice: {datos[2]}\n1hr: {datos[3]}%\n24hs: {datos[4]}%')
+                        tools.sparkline(datos[5])
+                        tools.send_chart(f'{new_coin[1]}\nTipo: {datos[0][0]}\nSentiment: {datos[1]}%\nPrice: {datos[2]}\n1hr: {datos[3]}%\n24hs: {datos[4]}%')
                     except:
                         continue
         old_coins = coins
         time.sleep(300)
+
+
+# datos = coingecko.data('ethereum')
+# tools.sparkline(datos[5])
+# tools.send_chart(f'ethereum\nTipo: {datos[0][0]}\nSentiment: {datos[1]}%\nPrice: {datos[2]}\n1hr: {datos[3]}%\n24hs: {datos[4]}%')
