@@ -37,5 +37,6 @@ if __name__ == '__main__':
 
 
 # datos = coingecko.data('opulous')
-# tools.sparkline(datos[6])
-# tools.send_chart(f'opulous\nPrice: {datos[0]} U$S\n#: {datos[1]}\nTipo: {datos[2][0]}\nSentiment: {datos[3]}%\n1hr: {datos[4]}%\n24hs: {datos[5]}%')
+# for n in [0,1]:
+#     tools.sparkline(datos[6])
+#     tools.send_chart(f'opulous\nPrice: {datos[0]} U$S\n#: {datos[1]}\nTipo: {datos[2][0]}\nSentiment: {datos[3]}%\n1hr: {datos[4]}%\n24hs: {datos[5]}%')

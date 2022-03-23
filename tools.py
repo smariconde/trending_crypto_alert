@@ -17,7 +17,7 @@ def sparkline(prices):
     plt.xticks([])
     plt.yticks([])
     plt.box(False)
-    plt.plot(prices, linewidth=4, color='darkmagenta')
+    plt.plot(prices, linewidth=4, color='green')
     
     # plt.show()
-    plt.savefig('chart.png', bbox_inches='tight')
+    plt.savefig('chart.png', bbox_inches='tight', transparent=True)
