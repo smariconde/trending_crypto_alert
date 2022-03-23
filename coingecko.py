@@ -27,7 +27,6 @@ def data(coin_id):
         price_1h = round(js["market_data"]["price_change_percentage_1h_in_currency"]['usd'], 2)
         price_24hs = round(js["market_data"]["price_change_percentage_24h"], 2)
         chart = js["market_data"]["sparkline_7d"]["price"]
-        print(chart)
     except:
         category = '-'
         sentiment = '-'
