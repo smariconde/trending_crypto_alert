@@ -1,6 +1,5 @@
 import telegram
 from keys import *
-import matplotlib
 import matplotlib.pyplot as plt
 
 def send_message(text):
@@ -21,3 +20,4 @@ def sparkline(prices):
     
     # plt.show()
     plt.savefig('chart.png', bbox_inches='tight', transparent=True)
+    plt.close()
